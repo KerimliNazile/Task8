@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 2.Istenilen sayda gelen datalarin cut olanlarinin toplamini tapan Js function yazin.
+        // Call back istifade edeceksiz.
+
+
+        // let numbers = [1, 3, 4, 6, 22, 79, 90, 55, 3, 21, 44]
+        // let toplam = 0
+        // function cutlerintoplami(callback, ...numbers) {
+        //     for (let i = 0; i < numbers.length; i++) {
+        //         if (numbers[i] % 2 === 0) {
+        //             toplam += numbers[i];
+        //         }
+        //     }
+        //     callback(toplam);
+        // }
+        // function END(toplam) {
+        //     console.log(toplam);
+        // }
+        // cutlerintoplami(END, ...numbers);
+
+
+
+        // 3.Istenilen sayda gelen datalarin tek olanlarinin toplamini tapan Js function yazin.
+        // Call back istifade edeceksiz.
+
+
+        // let numbers = [1, 3, 4, 6, 22, 79, 90, 55, 3, 21, 44, 89, 9, 65, 45, 34]
+        // let toplam = 0
+        // function teklerintoplami(callback, ...numbers) {
+        //     for (let i = 0; i < numbers.length; i++) {
+        //         if (numbers[i] % 2 !== 0) {
+        //             toplam += numbers[i];
+        //         }
+        //     }
+        //     callback(toplam);
+        // }
+        // function END(toplam) {
+        //     console.log(toplam);
+        // }
+        // teklerintoplami(END, ...numbers);
+
+
+        // 4.Istenilen sayda gelen datalarin cut olanlarin toplamini tek olanlarinin toplamina olan hasilini tapan Js function yazin.
+        // Call back istifade edeceksiz.
+        //        
+       
+        function cuttekhasil(...numbers) {
+            const array1 = [...numbers];
+            let cutcem = 0;
+            let tekcem = 0;
+            for (let i = 0; i < array1.length; i++) {
+                if (array1[i] % 2 === 0) {
+                    cutcem += array1[i]
+                }
+                if (array1[i] % 2 !== 0) {
+                    tekcem += array1[i]
+                }
+            }
+            return cutcem * tekcem
+        }
+        function END(callback, ...numbers) {
+            return callback(...numbers)
+        }
+        console.log(END(cuttekhasil,1,2,3));
+
+        // 1.Istenilen sayda  gelen datalarin Ortalamasini veren Js function yazin.Call back istifade edeceksiz.
+        // let numbers = [11, 12, 13, 14, 15, 16]
+        // function Edediorta(callback, ...numbers) {
+        //     let toplam = numbers.reduce((number, deyer) => number + deyer, 0)
+        //     let ortalama = toplam / numbers.length
+        //     callback(ortalama)
+        // }
+        // function END(ortalama) {
+        //     console.log(ortalama);
+        // }
+        // Edediorta(END, ...numbers)
+    </script>
+</body>
+
+</html>
